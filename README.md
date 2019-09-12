@@ -1,8 +1,8 @@
-# Container-Automation
+# Containerization-Automation
 
-[![Documentation Status](https://readthedocs.org/projects/container-automation/badge/?version=latest)](https://container-automation.readthedocs.io/zh_CN/latest/?badge=latest) [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![Documentation Status](https://readthedocs.org/projects/containerization-automation/badge/?version=latest)](https://containerization-automation.readthedocs.io/zh_CN/latest/?badge=latest) [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-> 容器与自动化
+> 容器化与自动化
 
 学习和使用容器和自动化工具
 
@@ -19,8 +19,9 @@
 容器以及自动化工具的出现极大的加快了软件的生产步骤，学习以下工具：
 
 1. `Docker`
-2. `Jenkins CI`
-3. `Travis CI`
+2. `Kubernetes`
+3. `Jenkins CI`
+4. `Travis CI`
 
 ## 用法
 
