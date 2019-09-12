@@ -9,7 +9,8 @@
 .. toctree::
    :maxdepth: 1
 
-   docker/index.rst
+   docker/index
+   jenkins/index
 
 
 .. Indices and tables
