@@ -10,6 +10,7 @@ docker使用指南
    :maxdepth: 2
 
    basic
+   advanced
 
 参考
 ******
