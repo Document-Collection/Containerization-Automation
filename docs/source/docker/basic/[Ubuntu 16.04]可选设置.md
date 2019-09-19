@@ -54,4 +54,12 @@ $ sudo chmod g+rwx "$HOME/.docker" -R
 
 ## 开机自启动
 
-...
+使用`systemctl`命令实现`docker`守护进程开机自启动
+
+```
+# 允许开机自启动
+$ sudo systemctl enable docker
+# 停止开机自启动
+$ sudo systemctl disable docker
+```
+
