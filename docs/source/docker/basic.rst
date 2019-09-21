@@ -14,3 +14,4 @@
    basic/hello-world
    basic/docker-hub使用
    basic/[Ubuntu 16.04]docker启动设置
+   basic/[docker commit]保存容器为镜像
