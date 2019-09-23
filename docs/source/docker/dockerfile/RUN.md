@@ -1,6 +1,8 @@
 
 # RUN
 
+参考：[RUN](https://docs.docker.com/engine/reference/builder/#run)
+
 `RUN`指令在当前镜像上执行操作，然后将提交结果为新的镜像，作用于`Dockerfile`的下一步
 
 ## 语法
