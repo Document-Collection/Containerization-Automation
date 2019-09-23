@@ -11,6 +11,7 @@ docker使用指南
 
    basic
    advanced
+   dockerfile
 
    FAQ
 
