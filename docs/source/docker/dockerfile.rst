@@ -14,3 +14,4 @@ Dockerfile指令
    dockerfile/RUN
    dockerfile/LABEL
    dockerfile/EXPOSE
+   dockerfile/ENV
