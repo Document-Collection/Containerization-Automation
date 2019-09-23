@@ -12,3 +12,4 @@ Dockerfile指令
    dockerfile/FROM 
    dockerfile/CMD
    dockerfile/RUN
+   dockerfile/LABEL
