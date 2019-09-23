@@ -13,3 +13,4 @@ Dockerfile指令
    dockerfile/CMD
    dockerfile/RUN
    dockerfile/LABEL
+   dockerfile/EXPOSE
