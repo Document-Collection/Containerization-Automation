@@ -16,3 +16,4 @@ Dockerfile指令
    dockerfile/EXPOSE
    dockerfile/ENV
    dockerfile/ADD和COPY
+   dockerfile/ENTRYPOINT
