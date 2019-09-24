@@ -17,3 +17,4 @@ Dockerfile指令
    dockerfile/ENV
    dockerfile/ADD和COPY
    dockerfile/ENTRYPOINT
+   dockerfile/WORKDIR
