@@ -15,3 +15,4 @@ Dockerfile指令
    dockerfile/LABEL
    dockerfile/EXPOSE
    dockerfile/ENV
+   dockerfile/ADD和COPY
