@@ -19,3 +19,4 @@ Dockerfile指令
    dockerfile/ENTRYPOINT
    dockerfile/WORKDIR
    dockerfile/ARG
+   dockerfile/SHELL
