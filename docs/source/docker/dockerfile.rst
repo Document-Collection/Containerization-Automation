@@ -18,3 +18,4 @@ Dockerfile指令
    dockerfile/ADD和COPY
    dockerfile/ENTRYPOINT
    dockerfile/WORKDIR
+   dockerfile/ARG
