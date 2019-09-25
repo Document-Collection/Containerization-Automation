@@ -10,8 +10,9 @@ docker使用指南
    :maxdepth: 2
 
    basic
-   advanced
    dockerfile
+   advanced
+   gui
 
    FAQ
 
