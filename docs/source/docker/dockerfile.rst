@@ -22,3 +22,4 @@ Dockerfile编写
    dockerfile/ARG
    dockerfile/SHELL
    dockerfile/[译]Dockerfile编写最佳实践
+   dockerfile/多阶段构建
