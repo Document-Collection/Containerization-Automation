@@ -14,7 +14,7 @@ docker使用指南
    advanced
    gui
 
-   FAQ
+   faq
 
 参考
 ******
