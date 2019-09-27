@@ -127,3 +127,10 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 ```
 
 ![](./imgs/wps2.png)
+
+将设置完成后的容器保存为镜像
+
+```
+$ docker commit --author zjzstu --message "wps for Linux" 6ec9 zjzstu/wps:v2
+$ docker tag zjzstu/wps:v2 zjzstu/wps:latest
+```
