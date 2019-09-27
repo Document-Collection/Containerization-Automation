@@ -12,6 +12,7 @@ docker使用指南
    basic
    dockerfile
    advanced
+   storage
    gui
 
    faq
