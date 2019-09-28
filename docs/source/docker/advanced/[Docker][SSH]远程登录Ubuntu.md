@@ -21,7 +21,7 @@ FROM zjzstu/ubuntu:18.04
 RUN apt-get update && apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
 RUN echo 'root:THEPASSWORDYOUCREATED' | chpasswd
-RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
 # SSH login fix. Otherwise user is kicked off after login
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
@@ -34,7 +34,9 @@ CMD ["/usr/sbin/sshd", "-D"]
 * `RUN`指令更新已安装应用，同时安装`openssh-server`
 * `RUN`指令创建文件夹`/var/run/sshd`
 * `RUN`指令指定登录密码，修改`THEPASSWORDYOUCREATED`为自定义密码
-* `RUN`指令允许`ssh`登录`root`账户，修改文件`/etc/ssh/sshd_config`中的`PermitRootLogin prohibit-password`为`PermitRootLogin yes`（对于`Ubuntu 14.04`而言，默认设置为`PermitRootLogin without-password`）
+* `RUN`指令允许`ssh`登录`root`账户，修改文件`/etc/ssh/sshd_config`中的`#PermitRootLogin prohibit-password`为`PermitRootLogin yes`
+    * 对于`Ubuntu 14.04`而言，默认设置为`PermitRootLogin without-password`
+    * **注意**：对于`Ubuntu 16.04`而言，`ssh`默认打开了`PermitRootLogin`功能；对于`Ubuntu 18.04`而言，`ssh`默认关闭了`PermitRootLogin`功能。所以如果使用`Ubuntu 16.04`，需要将`#`号去除
 * `RUN`指令设置`/etc/pam.d/sshd`，防止用户在登录后将被踢出
 * `EXPOSE`指令设置容器监听端口`22`
 * `CMD`指令设置容器启动`sshd`，并在后台运行（`-D`表示以后台守护进程方式运行服务器）
