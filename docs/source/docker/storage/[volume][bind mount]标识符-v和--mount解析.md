@@ -1,6 +1,12 @@
 
 # [volume][bind mount]标识符-v和--mount解析
 
+参考：
+
+[Use volumes](https://docs.docker.com/storage/volumes/#choose-the--v-or---mount-flag)
+
+[Use bind mounts](https://docs.docker.com/storage/bind-mounts/#configure-bind-propagation)
+
 `docker run`命令的标识符`-v`和`--mount`均可用于卷操作和绑定挂载操作
 
 最开始`-v`仅作用于独立容器（`standalone container`），而`--mount`作用于`swarm`服务。从`Docker 17.06`开始，`--mount`也可作用于独立容器
