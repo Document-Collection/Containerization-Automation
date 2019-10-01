@@ -13,6 +13,7 @@ docker使用指南
    dockerfile
    advanced
    storage
+   docker-compose
    gui
 
    faq
