@@ -11,3 +11,4 @@
    storage/[docker volume]创建和管理卷
    storage/[volume][bind mount]标识符-v和--mount解析
    storage/[volume][bind mount]bind propagation设置
+   storage/使用卷管理数据

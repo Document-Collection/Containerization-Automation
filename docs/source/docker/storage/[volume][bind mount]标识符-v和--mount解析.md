@@ -28,6 +28,15 @@
     * `readonly`：是否以[只读方式挂载](https://docs.docker.com/storage/volumes/#use-a-read-only-volume)到容器
     * `volume-opt`：可以多次指定，由选项名及其值组成键值对
 
+如果卷驱动程序接受逗号分隔的列表作为选项，则必须从外部`csv`解析器转义该值。要转义`volume opt`，请用双引号（`""`）将其括起来，并用单引号（`''`）将整个挂载参数括起来。比如
+
+```
+$ docker service create \
+     --mount 'type=volume,src=<VOLUME-NAME>,dst=<CONTAINER-PATH>,volume-driver=local,volume-opt=type=nfs,volume-opt=device=<nfs-server>:<nfs-path>,"volume-opt=o=addr=<nfs-address>,vers=4,soft,timeo=180,bg,tcp,rw"'
+    --name myservice \
+    <IMAGE>
+```
+
 ### 绑定挂载操作
 
 * `-v --volumes`：由3个字段组成，用冒号（`:`）隔开，字段的顺序必须正确
