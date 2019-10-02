@@ -56,6 +56,7 @@ root        11  0.0  0.0  34400  2860 ?        Rs   06:06   0:00 ps aux
 ```
 
 **注意 1：`exec`形式作为`JSON`数组，使用双引号而不是单引号**
+
 **注意 2：`exec`形式不会调用命令行`shell`，所以如果要进行`shell`处理必须显式调用`/bin/sh -c`，比如`ENTRYPOING ["sh", "-c", "echo $HOME"]`**
 
 ## Shell形式示例
