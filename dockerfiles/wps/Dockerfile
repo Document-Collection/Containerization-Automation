@@ -11,20 +11,26 @@
 FROM ubuntu:18.04
 LABEL maintainer "zhujian <zjzstu@github.com>"
 
-RUN apt-get update && apt-get install -f
-RUN apt-get install -y libfreetype6 libcups2 libglib2.0-0 libglu1-mesa libsm6 libxrender1 libfontconfig1 libxext6 libxcb1
-RUN apt-get install -y xdg-utils unzip
-
 WORKDIR /app
-COPY wps-office_11.1.0.8865_amd64.deb wps-office-fonts_1.0_all.deb wps_symbol_fonts.zip /app/
-RUN unzip wps_symbol_fonts.zip -d /usr/share/fonts/ && \
-	cd /usr/share/fonts/ && \
-	chmod 755 *.ttf && \
-	chmod 755 *.TTF
-RUN dpkg -i wps-office_11.1.0.8865_amd64.deb && dpkg -i wps-office-fonts_1.0_all.deb
+COPY wps_symbol_fonts.zip ./
 
-RUN rm wps-office_11.1.0.8865_amd64.deb wps-office-fonts_1.0_all.deb wps_symbol_fonts.zip
-RUN apt-get autoremove -y --purge && apt-get autoclean -y && apt-get clean -y && \
+# 安装依赖
+# RUN apt-get update && apt-get install -f && \
+RUN apt-get update && \
+	apt-get install -y libfreetype6 libcups2 libglib2.0-0 libglu1-mesa libsm6 libxrender1 libfontconfig1 libxext6 libxcb1 xdg-utils unzip wget && \
+	# 下载安装包
+	wget http://kdl.cc.ksosoft.com/wps-community/download/8865/wps-office_11.1.0.8865_amd64.deb && \
+	wget http://kdl.cc.ksosoft.com/wps-community/download/fonts/wps-office-fonts_1.0_all.deb && \
+	# 安装wps及中文字体
+	unzip wps_symbol_fonts.zip -d /usr/share/fonts/ && \
+	chmod 755 /usr/share/fonts/*.ttf && \
+	chmod 755 /usr/share/fonts/*.TTF && \
+	dpkg -i wps-office_11.1.0.8865_amd64.deb && \
+	dpkg -i wps-office-fonts_1.0_all.deb && \
+	# 删除
+	rm *.deb wps_symbol_fonts.zip && \
+	apt-get remove -y --purge wget unzip && \
+	apt-get autoremove -y --purge && apt-get autoclean -y && apt-get clean -y && \
 	find /var/lib/apt/lists -type f -delete && \
 	find /var/cache -type f -delete && \
 	find /var/log -type f -delete && \
