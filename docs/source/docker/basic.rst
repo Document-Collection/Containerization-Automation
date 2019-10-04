@@ -11,6 +11,7 @@
    basic/[Ubuntu 16.04]安装
    basic/[Aliyun]镜像加速
    basic/[Ubuntu 16.04]可选设置
+   basic/[Docker][Ubuntu 18.04]中文环境配置
    basic/hello-world
    basic/docker-hub使用
    basic/[Ubuntu 16.04]docker启动设置
