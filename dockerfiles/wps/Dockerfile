@@ -8,7 +8,7 @@
 # --name wps \
 # wps
 
-FROM ubuntu:18.04
+FROM zjzstu/ubuntu:18.04
 LABEL maintainer "zhujian <zjzstu@github.com>"
 
 WORKDIR /app
