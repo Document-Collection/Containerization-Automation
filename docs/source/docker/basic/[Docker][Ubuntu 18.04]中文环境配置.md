@@ -1,7 +1,7 @@
 
 # [Docker][Ubuntu 18.04]中文环境配置
 
-当前主要使用`docker Ubuntu 18.04`镜像，需要对官方镜像进行进一步配置以适应中文开发环境
+当前主要使用`Docker Ubuntu 18.04`镜像，需要对官方镜像进行进一步配置以适应中文开发环境
 
 ## 阿里源替换
 
@@ -10,6 +10,30 @@
 ## zh_CN.UTF_8字符集设置
 
 参考[[Linux][locale]字符集设置](https://zj-linux-guide.readthedocs.io/zh_CN/latest/configure/[Linux][locale]%E5%AD%97%E7%AC%A6%E9%9B%86%E8%AE%BE%E7%BD%AE.html)
+
+## 时区设置
+
+参考：
+
+[Synchronize timezone from host to container](https://forums.docker.com/t/synchronize-timezone-from-host-to-container/39116)
+
+[apt-get install tzdata noninteractive](https://stackoverflow.com/questions/44331836/apt-get-install-tzdata-noninteractive)
+
+`Docker Ubuntu 18.04`默认的时区和亚洲-上海时区相差`8`个小时（东八区）
+
+在`Dockerfile`中增加以下命令
+
+```
+ENV DEBIAN_FRONTEND=noninteractive
+RUN	ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+RUN	apt-get install -y tzdata && dpkg-reconfigure --frontend noninteractive tzdata
+```
+
+还有一种方式是在使用`docker run`命令时同步主机时区
+
+```
+$ docker run -v /etc/localtime:/etc/localtime:ro ...
+```
 
 ## 编辑
 
@@ -20,11 +44,14 @@ FROM ubuntu:18.04
 LABEL maintainer "zhujian <zjzstu@github.com>"
 
 COPY sources.list .
+ENV DEBIAN_FRONTEND=noninteractive
 RUN mv sources.list /etc/apt/sources.list && \
 	apt-get update && \
-	apt-get install -y locales && \
+	apt-get install -y locales tzdata && \
 	locale-gen zh_CN.UTF-8 && \
 	update-locale LANG=zh_CN.UTF-8 LANGUAGE=zh_CN.UTF-8 LC_ALL=zh_CN.UTF-8 && \
+	ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
+	dpkg-reconfigure --frontend noninteractive tzdata && \
     find /var/lib/apt/lists -type f -delete && \
     find /var/cache -type f -delete
 
