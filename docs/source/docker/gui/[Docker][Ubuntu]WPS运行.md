@@ -9,11 +9,12 @@
 
 官网地址：[WPS](http://wps-community.org/downloads)
 
-主要使用其中的`3`项功能：
+共`4`项功能：
 
 1. `wps for word`
 2. `wps for ppt`
 3. `wps for excel`
+4. `wps for pdf`
 
 ## Windows字体
 
@@ -180,11 +181,11 @@ fi
 
 可将脚本置于主机`/usr/local/bin`目录下，这样就可以随时启动`wps`了
 
-*`wpp.sh`和`et.sh`脚本类似*
+*`wpp.sh`、`et.sh`和`pdf.sh`脚本类似*
 
 ## 启动器设置
 
-`wps`安装时已生成启动器文件，进入容器`/usr/share/applications`，将`wps-office-wps.desktop`、`wps-office-wpp.desktop`和`wps-office-et.desktop`复制到挂载点
+`wps`安装时已生成启动器文件，进入容器`/usr/share/applications`，将`wps-office-wps.desktop`、`wps-office-wpp.desktop`、`wps-office-et.desktop`和`wps-office-pdf.desktop`复制到挂载点
 
 ```
 $ docker exec -it 3657 bash
