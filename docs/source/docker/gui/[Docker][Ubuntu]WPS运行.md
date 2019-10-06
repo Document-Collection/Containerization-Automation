@@ -16,6 +16,10 @@
 3. `wps for excel`
 4. `wps for pdf`
 
+完整脚本地址：[Containerization-Automation/dockerfiles/wps](https://github.com/zjZSTU/Containerization-Automation/tree/master/dockerfiles/wps)
+
+`Docker Hub`地址：[zjzstu/wps](https://cloud.docker.com/u/zjzstu/repository/docker/zjzstu/wps)
+
 ## Windows字体
 
 参考：
@@ -55,19 +59,19 @@ FROM zjzstu/ubuntu:latest
 LABEL maintainer "zhujian <zjzstu@github.com>"
 
 WORKDIR /app
-COPY wps_symbol_fonts.zip docker-entrypoint.sh ./
+COPY wps_symbol_fonts.zip ./
 
 RUN set -eux && \
 	# 安装wps依赖，安装额外工具xdg-utils/unzip/wget/gosu
 	apt-get update && \
-	apt-get install -y libfreetype6 libcups2 libglib2.0-0 libglu1-mesa libsm6 libxrender1 libfontconfig1 libxext6 libxcb1 xdg-utils unzip wget gosu && \
+	apt-get install -y libfreetype6 libcups2 libglib2.0-0 libglu1-mesa libsm6 libxrender1 libfontconfig1 libxext6 libxcb1 libgtk2.0-0 libcanberra-gtk-module xdg-utils unzip wget gosu && \
 	# verify that the binary works
 	gosu nobody true && \
 	# 下载安装包
 	wget http://kdl.cc.ksosoft.com/wps-community/download/8865/wps-office_11.1.0.8865_amd64.deb && \
 	wget http://kdl.cc.ksosoft.com/wps-community/download/fonts/wps-office-fonts_1.0_all.deb && \
 	# 新建用户user，并修改安装包属主/属组
-	useradd -s /bin/bash -m user && \制图标文件夹`/usr/share/icons/hicolors`到挂
+	useradd -s /bin/bash -m user && \
 	chown user:user wps*.deb && \
 	# 安装wps及中文字体
 	unzip wps_symbol_fonts.zip -d /usr/share/fonts/ && \
@@ -83,42 +87,46 @@ RUN set -eux && \
 	find /var/cache -type f -delete && \
 	find /var/log -type f -delete && \
 	find /usr/share/doc -type f -delete && \
-	find /usr/share/man -type f -delete && \
-	# 赋予docker-entrypoint.sh可执行权限
-	chmod a+x docker-entrypoint.sh
+	find /usr/share/man -type f -delete
+
+COPY docker-entrypoint.sh ./
+# 赋予docker-entrypoint.sh可执行权限
+RUN chmod a+x docker-entrypoint.sh
 
 ENTRYPOINT ["/app/docker-entrypoint.sh"]
 ```
 
 1. 设置工作目录`/app`
-2. 将本地上下文的文件`wps_symbol_fonts.zip`和`docker-entrypoint.sh`复制到`/app`
+2. 将本地上下文的`wps_symbol_fonts.zip`复制到`/app`
 3. 将所有安装操作组合在一起执行，有助于减少镜像大小
 	* 下载`wps`相关依赖和工具，`wps`安装包
 	* 新建用户`user`，修改`wps`安装包属主/属组
 	* 添加`wps`中文字体并安装`wps`
 	* 删除不再需要的资源
-	* 赋予脚本`docker-entrypoint.sh`可执行权限
-4. 设置`.sh`脚本为启动项
+4. 复制`docker-entrypoint.sh`，赋予可执行权限并设置脚本为启动项
 
 脚本`docker-entrypoint.sh`内容如下：
 
 ```
 #!/bin/bash
 
-USER_ID=${LOCAL_USER_ID:-9001}
-chown -R $USER_ID /app
+if [ "$(id -u)" -eq '0' ]
+then
+    USER_ID=${LOCAL_USER_ID:-9001}
+ 
+    chown -R ${USER_ID} /app
+    usermod -u ${USER_ID} user
+    usermod -a -G root user
+ 
+    export HOME=/home/user
+    exec gosu user "$0" "$@"
+fi
 
-# 修改usr用户ID
-usermod -u $USER_ID user
-usermod -a -G root user
-export HOME=/home/user
-
-# 切换到user用户再执行wps
-exec gosu user $@
+exec "$@"
 ```
 
-1. 设置用户`user`的`ID`号和本地用户`ID`一致，这样保证绑定挂载时得到的文件能够相互使用
-2. 利用工具`gosu`切换到`user`用户，并执行命令
+1. 切换到`user`用户，利用工具`gosu`进行切换，再次执行文件
+2. 设置用户`user`的`ID`号和本地用户`ID`一致，保证绑定挂载时得到的文件能够相互使用
 
 ## 构建
 
@@ -131,53 +139,98 @@ $ docker build -t zjzstu/wps:latest .
 ```
 $ docker image ls
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-zjzstu/wps          latest              273f1cea7fef        8 minutes ago       1.46GB
+zjzstu/wps          latest              f3e0e8b4b574        About an hour ago   1.5GB
 ```
 
 ## 运行
 
-编写脚本`wps.sh`
+编写脚本`wps.sh`，可输入文件地址作为参数
 
 ```
 #!/bin/bash
 
-xhost + > /dev/null
+FINALNAME=
+BASENAME="/home/user/Documents"
 
-START=$(docker ps -q --filter="name=wps")
-STOP=$(docker ps -aq --filter="name=wps")
+COMMAND="wps"
+COMMAND_NAME="wps"
+IMAGE_NAME="zjzstu/wps:latest"
 
-if [ -n "${START}" ]
-then
-    docker exec -u user $START wps > /dev/null
-elif [ -n "${STOP}" ]
-then
-    docker restart ${STOP} > /dev/null
-else
+# 替换主机文件路径为容器路径
+function parse_arg()
+{
+    FILE_DIR=$1
+
+    if [[ ${FILE_DIR} == ./* ]]
+    then
+        FINALNAME=${PWD}${FILE_DIR#.}
+    elif [[ ${FILE_DIR} == ../* ]]
+    then
+        FINALNAME=`dirname ${PWD}`${FILE_DIR#..}
+    elif [[ ${FILE_DIR} == ${HOME}* ]]
+    then
+        FINALNAME=${FILE_DIR}    
+    else
+        FINALNAME=${PWD}/${FILE_DIR}
+    fi
+
+    FINALNAME=${BASENAME}${FINALNAME#${HOME}}
+}
+
+# 启动wps镜像
+function startup()
+{
     docker run -d \
         -v /tmp/.X11-unix:/tmp/.X11-unix \
-        -e DISPLAY=unix$DISPLAY \
-        -e LOCAL_USER_ID=`id -u $USER` \
+        -e DISPLAY=unix${DISPLAY} \
+        -e LOCAL_USER_ID=`id -u ${USER}` \
         -e XMODIFIERS="@im=fcitx" \
-	    -e QT_IM_MODULE="fcitx" \
-    	-e GTK_IM_MODULE="fcitx" \
-        -v $HOME/docs:/home/user/Documents \
-        --name wps \
-        zjzstu/wps:latest \
-        wps > /dev/null
-fi
+        -e QT_IM_MODULE="fcitx" \
+        -e GTK_IM_MODULE="fcitx" \
+        -v ${HOME}:${BASENAME} \
+        --name ${COMMAND_NAME} \
+        ${IMAGE_NAME} \
+        ${COMMAND} ${FINALNAME} > /dev/null 2>&1
+}
+
+function run()
+{
+    xhost + > /dev/null 2>&1
+
+    START=$(docker ps -q --filter="name=${COMMAND_NAME}")
+    STOP=$(docker ps -aq --filter="name=${COMMAND_NAME}")
+
+    if [ -n "${START}" ]
+    then
+        docker exec -u user $START ${COMMAND} $FINALNAME > /dev/null 2>&1
+    elif [ -n "${STOP}" ]
+    then
+        if [ -z ${FINALNAME} ]
+        then
+            docker restart ${STOP} > /dev/null 2>&1
+        else
+            docker container rm ${STOP} > /dev/null 2>&1
+            startup
+        fi
+    else
+        startup
+    fi
+}
+
+function main()
+{
+    NUM=$#
+    if [ $NUM -eq 1 ]
+    then
+    	parse_arg "$@"
+    fi
+
+	run "$@"
+	exit 0
+}
+
+main "$@"
 ```
-
-执行如下操作
-
-1. 启动`xserver`，允许容器图形界面显示
-2. 变量`START`查询`wps`是否运行；变量`STOP`查询`wps`是否停止
-3. 如果容器正在运行，则使用命令`docker exec`进入容器并启动`wps`
-4. 如果容器已停止，则使用命令`docker restart`重启容器
-5. 如果没有`wps`容器，则使用命令`docker run`启动`wps`容器。设置如下：
-	* 设置绑定挂载方式，将主机`$HOME/docs`目录挂载到容器`/home/user/Documents`下
-	* 设置环境变量，输入主机用户`ID`
-	* 设置容器名为`wps`
-	* 输入参数`wps`，用于`docker-entrypoint`脚本操作
 
 可将脚本置于主机`/usr/local/bin`目录下，这样就可以随时启动`wps`了
 
@@ -260,3 +313,13 @@ Exec=/usr/local/bin/wps %f
 重新启动`wps`即可切换到中文版
 
 ![](./imgs/wps2.png)
+
+## 小结
+
+上述操作完成后，将`wps/wpp/et/wpspdf`作为`word`文档，`PPT`，表格和`pdf`的默认启动项，即可实现点击文档打开操作
+
+卸载`libreoffice`命令
+
+```
+$ sudo apt-get remove --purge libreoffice-common
+```
