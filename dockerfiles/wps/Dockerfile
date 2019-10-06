@@ -3,12 +3,12 @@ FROM zjzstu/ubuntu:latest
 LABEL maintainer "zhujian <zjzstu@github.com>"
 
 WORKDIR /app
-COPY wps_symbol_fonts.zip docker-entrypoint.sh ./
+COPY wps_symbol_fonts.zip ./
 
 RUN set -eux && \
 	# 安装wps依赖，安装额外工具xdg-utils/unzip/wget/gosu
 	apt-get update && \
-	apt-get install -y libfreetype6 libcups2 libglib2.0-0 libglu1-mesa libsm6 libxrender1 libfontconfig1 libxext6 libxcb1 xdg-utils unzip wget gosu && \
+	apt-get install -y libfreetype6 libcups2 libglib2.0-0 libglu1-mesa libsm6 libxrender1 libfontconfig1 libxext6 libxcb1 libgtk2.0-0 libcanberra-gtk-module xdg-utils unzip wget gosu && \
 	# verify that the binary works
 	gosu nobody true && \
 	# 下载安装包
@@ -31,8 +31,10 @@ RUN set -eux && \
 	find /var/cache -type f -delete && \
 	find /var/log -type f -delete && \
 	find /usr/share/doc -type f -delete && \
-	find /usr/share/man -type f -delete && \
-	# 赋予docker-entrypoint.sh可执行权限
-	chmod a+x docker-entrypoint.sh
+	find /usr/share/man -type f -delete
+
+COPY docker-entrypoint.sh ./
+# 赋予docker-entrypoint.sh可执行权限
+RUN chmod a+x docker-entrypoint.sh
 
 ENTRYPOINT ["/app/docker-entrypoint.sh"]
