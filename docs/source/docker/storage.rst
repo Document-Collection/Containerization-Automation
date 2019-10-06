@@ -13,3 +13,4 @@
    storage/[volume][bind mount]bind propagation设置
    storage/使用卷管理数据
    storage/绑定挂载
+   storage/[gosu]绑定挂载最佳实践
