@@ -7,3 +7,4 @@
 
    gui/[Docker][Ubuntu]Libreoffice运行
    gui/[Docker][Ubuntu]WPS运行
+   gui/[Docker][Ubuntu]vscode运行
