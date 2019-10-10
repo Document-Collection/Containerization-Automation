@@ -10,7 +10,7 @@ CONTAINER_STORAGE="/home/user/${APP} Files"
 HOST_CONFIGURE="${HOME}/.deepinwine/Deepin-${APP}"
 CONTAINER_CONFIGURE="/home/user/.deepinwine/Deepin-${APP}"
 
-APP_COMMAND="/opt/deepinwine/apps/Deepin-WeChat/run.sh"
+APP_COMMAND="/opt/deepinwine/apps/Deepin-${APP}/run.sh"
 
 function startup()
 {

@@ -1,10 +1,17 @@
 #!/bin/bash
 
-COMMAND="/opt/deepinwine/apps/Deepin-QQ/run.sh"
-CONTAINER_NAME="qq"
-IMAGE_NAME="zjzstu/qq:latest"
+APP="QQ"
+CONTAINER="qq"
 
-# 启动wechat镜像
+IMAGE="zjzstu/${CONTAINER}:latest"
+HOST_STORAGE="${HOME}/deepin-wine/Tencent Files"
+CONTAINER_STORAGE="/home/user/Tencent Files"
+
+HOST_CONFIGURE="${HOME}/.deepinwine/Deepin-${APP}"
+CONTAINER_CONFIGURE="/home/user/.deepinwine/Deepin-${APP}"
+
+APP_COMMAND="/opt/deepinwine/apps/Deepin-${APP}/run.sh"
+
 function startup()
 {
     docker run \
@@ -18,21 +25,22 @@ function startup()
         -e XMODIFIERS="@im=fcitx" \
         -e QT_IM_MODULE="fcitx" \
         -e GTK_IM_MODULE="fcitx" \
-        -v ${HOME}/deepin-wine/"Tencent Files":/home/user/"Tencent Files" \
-        --name ${CONTAINER_NAME} \
-        -d ${IMAGE_NAME} > /dev/null 2>&1
+        -v "${HOST_STORAGE}":"${CONTAINER_STORAGE}" \
+        -v "${HOST_CONFIGURE}":"${CONTAINER_CONFIGURE}" \
+        --name ${CONTAINER} \
+        -d ${IMAGE} > /dev/null 2>&1
 }
 
 function run()
 {
     xhost + > /dev/null 2>&1
 
-    START=$(docker ps -q --filter="name=${CONTAINER_NAME}")
-    STOP=$(docker ps -aq --filter="name=${CONTAINER_NAME}")
+    START=$(docker ps -q --filter="name=${CONTAINER}")
+    STOP=$(docker ps -aq --filter="name=${CONTAINER}")
 
     if [ -n "${START}" ]
     then
-        docker exec -d -u user $START ${COMMAND} > /dev/null 2>&1
+        docker exec -d -u user $START ${APP_COMMAND} > /dev/null 2>&1
     elif [ -n "${STOP}" ]
     then
         docker restart ${STOP} > /dev/null 2>&1
