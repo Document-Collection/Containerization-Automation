@@ -20,6 +20,5 @@ RUN set -eux && \
 
 COPY docker-entrypoint.sh ./
 RUN chmod a+x docker-entrypoint.sh && \
-	chown user:user docker-entrypoint.sh && \
-    ls -al
+	chown user:user docker-entrypoint.sh
 ENTRYPOINT ["/app/docker-entrypoint.sh"]
