@@ -26,7 +26,7 @@ RUN set -eux && \
 	# 删除
 	rm *.deb wps_symbol_fonts.zip && \
 	apt-get remove -y --purge wget unzip && \
-	apt-get autoremove -y --purge && apt-get autoclean -y && apt-get clean -y && \
+	apt-get autoclean -y && apt-get clean -y && \
 	find /var/lib/apt/lists -type f -delete && \
 	find /var/cache -type f -delete && \
 	find /var/log -type f -delete && \
