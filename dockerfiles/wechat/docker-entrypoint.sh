@@ -15,10 +15,13 @@ then
     exec gosu user "$0" "$@"
 fi
 
-/opt/deepinwine/apps/Deepin-WeChat/run.sh > /dev/null 2>&1
+APP="WeChat"
+APP_NAME="WeChat.exe"
+
+/opt/deepinwine/apps/Deepin-${APP}/run.sh > /dev/null 2>&1
 sleep 30s
 
-while test -n "`pidof WeChat.exe`"
+while test -n "`pidof ${APP_NAME}`"
 do
     sleep 1s
 done
