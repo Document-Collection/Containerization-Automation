@@ -27,8 +27,6 @@ wget https://mirrors.aliyun.com/deepin/pool/main/libj/libjpeg-turbo/libjpeg62-tu
 
 ## 安装
 
-使用容器[zjzstu/ubuntu:18.04]()
-
 ```
 # 将保存deepin.sh的目录挂载到容器
 $ docker run -it -v /path/to/deep-wine/:/app zjzstu/ubuntu:18.04 bash
@@ -64,5 +62,3 @@ $ apt-get autoclean -y && apt-get clean -y && \
 ```
 $ docker commit --author zjzstu --message "deep-wine" ae799 zjzstu/deep-wine:latest
 ```
-
-在线地址：[zjzstu/deepin-wine:latest]()

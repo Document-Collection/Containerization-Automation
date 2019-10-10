@@ -5,7 +5,7 @@
 
 微信安装包地址：[deepin.com.wechat](https://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.wechat/)
 
-完整脚本地址：[wechat]()
+完整脚本地址：[wechat](https://github.com/zjZSTU/Containerization-Automation/tree/master/dockerfiles/wechat)
 
 ## 安装
 
@@ -107,8 +107,6 @@ docker run \
     --name wechat \
     -d zjzstu/wechat:latest
 ```
-
-![]()
 
 ## 可执行脚本
 
