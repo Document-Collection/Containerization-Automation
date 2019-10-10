@@ -1,0 +1,14 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+X-Created-By=Deepin WINE Team
+Categories=chat;
+Icon=deepin.com.qq.im
+Exec=/usr/local/bin/qq
+Name=QQ
+Name[zh_CN]=QQ
+Comment=Tencent QQ Client on Deepin Wine
+StartupWMClass=QQ.exe
+MimeType=
