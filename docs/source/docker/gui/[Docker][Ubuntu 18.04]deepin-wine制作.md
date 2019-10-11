@@ -62,3 +62,11 @@ $ apt-get autoclean -y && apt-get clean -y && \
 ```
 $ docker commit --author zjzstu --message "deep-wine" ae799 zjzstu/deep-wine:latest
 ```
+
+## 后续使用及问题
+
+使用`zjzstu/deepin-wine:latest`镜像进行后续`Window`应用的安装，存在一个问题就是在托盘上的应用仅最后一个有效，之前的均无响应
+
+问题参考[2018-03-07的更新后，托盘区的Wine应用只有最后一个可点动 ](https://bbs.deepin.org/forum.php?mod=viewthread&tid=154113)
+
+当前操作系统`Ubuntu 16.04`
