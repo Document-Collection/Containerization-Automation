@@ -16,6 +16,8 @@ function startup()
 {
     docker run \
         --device=/dev/snd:/dev/snd \
+        --device=/dev/video0:/dev/video0 \
+        --privileged \
         -v /tmp/.X11-unix:/tmp/.X11-unix \
         -e DISPLAY=unix${DISPLAY} \
         -e AUDIO_GID=`getent group audio | cut -d: -f3` \
