@@ -26,7 +26,7 @@
 
 ## 安装
 
-需要预先安装以下工具：
+编译文档需要预先安装以下工具：
 
 ```
 $ pip install -U Sphinx
@@ -35,7 +35,7 @@ $ sudo apt-get install make
 
 ## 用法
 
-有两种使用方式
+有两种文档使用方式
 
 1. 在线浏览文档：[Containers and Automation](https://container-automation.readthedocs.io/zh_CN/latest/)
 
