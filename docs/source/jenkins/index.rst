@@ -22,6 +22,7 @@ Jenkins使用指南
 * `[Jenkins][GitLab][Hexo]新建Freestyle工程实现CI功能`_
 * `[Jenkins][GitLab][Hexo]新建Pipeline工程实现CI功能`_
 * `[Jenkins]Tomcat托管`_
+* `[Jenkins][Nginx]反向代理`_
 
 * FAQ
     * `[Jenkins]反向代理出错`_
@@ -40,7 +41,7 @@ Jenkins使用指南
 .. _`[Jenkins][GitLab][Hexo]新建Freestyle工程实现CI功能`: https://www.zhujian.tech/posts/446d640.html
 .. _`[Jenkins][GitLab][Hexo]新建Pipeline工程实现CI功能`: https://www.zhujian.tech/posts/f80ec296.html
 .. _`[Jenkins]Tomcat托管`: https://www.zhujian.tech/posts/bc77c204.html
-
+.. _`[Jenkins][Nginx]反向代理`: https://www.zhujian.tech/posts/7c823af7.html
 
 
 .. _`[Jenkins]反向代理出错`: https://www.zhujian.tech/posts/adc5ce0c.html
