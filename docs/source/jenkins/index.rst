@@ -23,6 +23,8 @@ Jenkins使用指南
 * `[Jenkins][GitLab][Hexo]新建Pipeline工程实现CI功能`_
 * `[Jenkins]Tomcat托管`_
 * `[Jenkins][Nginx]反向代理`_
+* `[Jenkins]Pipeline工程配置NodeJS环境`_
+* `在Docker中运行Jenkins`_
 
 * FAQ
     * `[Jenkins]反向代理出错`_
@@ -47,7 +49,8 @@ Jenkins使用指南
 .. _`[Jenkins]反向代理出错`: https://www.zhujian.tech/posts/adc5ce0c.html
 .. _`This Jenkins instance appears to be offline`: https://www.zhujian.tech/posts/6af1c833.html
 .. _`[Jenkins]Url is blocked: Requests to localhost are not allowed`: https://www.zhujian.tech/posts/5d46d7f9.html
-
+.. _`[Jenkins]Pipeline工程配置NodeJS环境`: https://www.zhujian.tech/posts/d521b4ea.html
+.. _`在Docker中运行Jenkins`: https://www.zhujian.tech/posts/202ee452.html
 
 参考
 ********
