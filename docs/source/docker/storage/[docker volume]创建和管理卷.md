@@ -64,3 +64,23 @@ test
 
 Total reclaimed space: 0B
 ```
+
+## 备份
+
+基本原理：将卷挂载到容器中，通过`tar`命令打包
+
+创建新的容器`dbstore`，挂载卷到路径`/dbdata`
+
+```
+$ docker run --rm -it -v VOLUME_NAME:/dbdata --name dbstore ubuntu /bin/bash
+```
+
+新建一个窗口
+
+* 启动新容器并挂载容器`dbstore`
+* 挂载本地文件夹到容器目录`/backup`
+* 执行`tar`命令，打包`/dbdata`目录到`/backup/backup.tar`
+
+```
+$ docker run --rm --volumes-from dbstore -v $(pwd):/backup ubuntu tar cvf /backup/backup.tar /dbdata
+```
