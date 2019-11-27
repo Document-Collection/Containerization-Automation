@@ -6,7 +6,7 @@ RUN set -eux && \
     apt-get update && \
     apt-get install -y wget ttf-wqy-microhei gosu dbus && \
     gosu nobody true && \
-    wget https://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.qq.im/deepin.com.qq.im_8.9.19983deepin23_i386.deb && \
+    wget https://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.qq.im/deepin.com.qq.im_9.1.8deepin0_i386.deb && \
     useradd -s /bin/bash -m user && \
     chown -R user:user /app && \
     dpkg -i *.deb && \
