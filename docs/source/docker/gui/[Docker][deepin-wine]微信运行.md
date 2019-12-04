@@ -83,3 +83,17 @@ $ sudo cp -r ~/deepin-wine/hicolor/* ./
 ```
 
 ![](./imgs/wechat-starter.png)
+
+## Ubuntu 18.04设置
+
+在`Ubuntu 18.04`中打开微信后发现出现多个小框，参考
+
+[微信运行窗口老是有一个黑色正方形方块 #22](https://github.com/wszqkzqk/deepin-wine-ubuntu/issues/22)
+
+[ubuntu 18.04 dash 图标分组问题 #74](https://github.com/wszqkzqk/deepin-wine-ubuntu/issues/74)
+
+需要两个步骤操作：
+
+第一步：需要安装系统插件[TopIcons Plus](https://extensions.gnome.org/extension/1031/topicons/)，打开`Ubuntu软件`，选择附加组件，搜索`topicons plus`并安装
+
+第二步：打开一个窗口，输入类似`666`这样的表情包，就能删除屏幕中央马赛克图案
