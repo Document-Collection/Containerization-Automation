@@ -12,3 +12,9 @@
 ![](./imgs/qq-begin.png)
 
 ![](./imgs/qq-starter.png)
+
+## Ubuntu 18.04出错
+
+之前在`Ubuntu 16.04`上运行没有问题，现在在`Ubuntu 18.04`上运行突然出错。制作了[[Docker][deepin-wine]TIM运行](https://container-automation.readthedocs.io/zh_CN/latest/docker/gui/[Docker][deepin-wine]TIM%E8%BF%90%E8%A1%8C.html)来替代使用
+
+*目前QQ重新发布了[QQ for Linux](https://im.qq.com/download/)*
