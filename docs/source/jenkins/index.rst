@@ -30,6 +30,8 @@ Jenkins使用指南
     * `[Jenkins]反向代理出错`_
     * `This Jenkins instance appears to be offline`_
     * `[Jenkins]Url is blocked: Requests to localhost are not allowed`_
+    * `Hook executed successfully but returned HTTP 404`_
+    * `Hook executed successfully but returned HTTP 403`_
 
 
 .. _`Jenkins安装`: https://www.zhujian.tech/posts/5d15ec84.html
@@ -51,6 +53,8 @@ Jenkins使用指南
 .. _`[Jenkins]Url is blocked: Requests to localhost are not allowed`: https://www.zhujian.tech/posts/5d46d7f9.html
 .. _`[Jenkins]Pipeline工程配置NodeJS环境`: https://www.zhujian.tech/posts/d521b4ea.html
 .. _`在Docker中运行Jenkins`: https://www.zhujian.tech/posts/202ee452.html
+.. _`Hook executed successfully but returned HTTP 404`: https://www.zhujian.tech/posts/6ff96ec3.html
+.. _`Hook executed successfully but returned HTTP 403`: https://www.zhujian.tech/posts/6ff96ec3.html
 
 参考
 ********
