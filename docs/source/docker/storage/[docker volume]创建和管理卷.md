@@ -84,3 +84,19 @@ $ docker run --rm -it -v VOLUME_NAME:/dbdata --name dbstore ubuntu /bin/bash
 ```
 $ docker run --rm --volumes-from dbstore -v $(pwd):/backup ubuntu tar cvf /backup/backup.tar /dbdata
 ```
+
+## 还原
+
+基本原理：将卷挂载到容器中，通过`tar`命令解压
+
+创建新容器`dbstore2`，将卷挂载到路径`/dbdata`
+
+```
+$ docker run --rm -it -v jenkins_home:/dbdata --name dbstore2 ubuntu /bin/bash
+```
+
+新建一个窗口，解压压缩包`backup.tar`内容到`dbstore2`的`dbdata`目录
+
+```
+$ docker run --rm --volumes-from dbstore2 -v $(pwd):/backup ubuntu bash -c "cd /dbdata && tar xvf /backup/backup.tar --strip 1"
+```
