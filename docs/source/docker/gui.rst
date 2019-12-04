@@ -11,5 +11,6 @@
    gui/[Docker][Ubuntu 18.04]deepin-wine制作
    gui/[Docker][deepin-wine]微信运行
    gui/[Docker][deepin-wine]QQ运行
+   gui/[Docker][deepin-wine]TIM运行
    gui/[Docker][deepin-wine]迅雷运行
    gui/[Docker]GUI最佳实践
