@@ -25,6 +25,7 @@ Jenkins使用指南
 * `[Jenkins][Nginx]反向代理`_
 * `[Jenkins]Pipeline工程配置NodeJS环境`_
 * `在Docker中运行Jenkins`_
+* `[Jenkins]手动设置私钥`_
 
 * FAQ
     * `[Jenkins]反向代理出错`_
@@ -46,6 +47,7 @@ Jenkins使用指南
 .. _`[Jenkins][GitLab][Hexo]新建Pipeline工程实现CI功能`: https://www.zhujian.tech/posts/f80ec296.html
 .. _`[Jenkins]Tomcat托管`: https://www.zhujian.tech/posts/bc77c204.html
 .. _`[Jenkins][Nginx]反向代理`: https://www.zhujian.tech/posts/7c823af7.html
+.. _`[Jenkins]手动设置私钥`: https://zhujian.tech/posts/c343c930.html#more
 
 
 .. _`[Jenkins]反向代理出错`: https://www.zhujian.tech/posts/adc5ce0c.html
