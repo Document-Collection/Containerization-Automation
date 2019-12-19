@@ -1,11 +1,11 @@
 
-# [Ubuntu 16.04]Compose安装
+# Compose安装
 
 参考：[Install Docker Compose](https://docs.docker.com/compose/install/)
 
 ## 必要条件
 
-需要先安装`Docker`，参考[[Ubuntu 16.04]安装](https://container-automation.readthedocs.io/zh_CN/latest/docker/basic/[Ubuntu%2016.04]%E5%AE%89%E8%A3%85.html)
+需要先安装`Docker`，参考[Docker安装](../basic/安装.md)
 
 ## 安装
 
