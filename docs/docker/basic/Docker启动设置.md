@@ -1,5 +1,5 @@
 
-# [Ubuntu 16.04]docker启动设置
+# Docker启动设置
 
 参考：[Control Docker with systemd](https://docs.docker.com/config/daemon/systemd/)
 

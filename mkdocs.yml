@@ -1,0 +1,92 @@
+# 站点名称
+site_name: 'Containerization and Automation'
+# 仓库链接
+repo_url: https://github.com/zjZSTU/Containerization-Automation.git
+# 作者
+site_author: 'zhujian'
+# 版权信息
+copyright: '2019, zhujian'
+# 源文件目录
+docs_dir: 'docs'
+# 生成静态文件目录
+site_dir: 'site'
+# 额外信息
+extra:
+    # 版本号
+    version: 1.0.0
+# 主题
+theme: 
+    # name: 'readthedocs'
+    # name: 'mkdocs'
+    name: 'material'
+# markdown扩展
+markdown_extensions:
+    - toc:
+        permalink: true
+    - pymdownx.arithmatex
+
+extra_javascript:
+    - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+# 导航
+nav:
+    - Home: index.md
+    - Jenkins: jenkins.md
+    # - Travis CI: './Travis-CI.md'
+    - Docker:
+        - 入门: 
+            - '[译]docker概述': './docker/basic/[译]docker概述.md'
+            - docker定位: './docker/basic/docker定位.md'
+            - '安装': './docker/basic/安装.md'
+            - '[Aliyun]镜像加速': './docker/basic/[Aliyun]镜像加速.md'
+            - '可选设置': './docker/basic/可选设置.md'
+            - '[Docker][Ubuntu 18.04]中文环境配置': './docker/basic/[Docker][Ubuntu 18.04]中文环境配置.md'
+            - '创建最简单的镜像': './docker/basic/hello-world.md'
+            - 'Docker Hub使用': './docker/basic/docker-hub使用.md'
+            - 'Docker启动设置': './docker/basic/Docker启动设置.md'
+            - '[docker commit]保存容器为镜像': './docker/basic/[docker commit]保存容器为镜像.md'
+        - 进阶:
+            - '[译]Docker开发最佳实践':  './docker/advanced/[译]Docker开发最佳实践.md'
+            - '编写.dockerignore': './docker/advanced/编写.dockerignore.md'
+            - '[docker search]搜索镜像': './docker/advanced/[docker search]搜索镜像.md'
+            - '[Docker][SSH]远程登录Ubuntu': './docker/advanced/[Docker][SSH]远程登录Ubuntu.md'
+        - Dockerfile:
+            - 'Dockerfile编写': './docker/dockerfile/Dockerfile编写.md'
+            - 'FROM': './docker/dockerfile/FROM.md'
+            - 'CMD': './docker/dockerfile/CMD.md'
+            - 'RUN': './docker/dockerfile/RUN.md'
+            - 'LABEL': './docker/dockerfile/LABEL.md'
+            - 'EXPOSE': './docker/dockerfile/EXPOSE.md'
+            - 'ENV': './docker/dockerfile/ENV.md'
+            - 'ADD和COPY': './docker/dockerfile/ADD和COPY.md'
+            - 'ENTRYPOINT': './docker/dockerfile/ENTRYPOINT.md'
+            - 'WORKDIR': './docker/dockerfile/WORKDIR.md'
+            - 'ARG': './docker/dockerfile/ARG.md'
+            - 'SHELL': './docker/dockerfile/SHELL.md'
+            - '[译]Dockerfile编写最佳实践': './docker/dockerfile/[译]Dockerfile编写最佳实践.md'
+            - '多阶段构建': './docker/dockerfile/多阶段构建.md'
+        - 数据存储:
+            - '[译]在Docker中管理数据': './docker/storage/[译]在Docker中管理数据.md'
+            - '[docker volume]创建和管理卷': './docker/storage/[docker volume]创建和管理卷.md'
+            - '[volume][bind mount]标识符-v和--mount解析': './docker/storage/[volume][bind mount]标识符-v和--mount解析.md'
+            - '[volume][bind mount]bind propagation设置': './docker/storage/[volume][bind mount]bind propagation设置.md'
+            - '使用卷管理数据': './docker/storage/使用卷管理数据.md'
+            - '绑定挂载': './docker/storage/绑定挂载.md'
+            - '[gosu]绑定挂载最佳实践': './docker/storage/[gosu]绑定挂载最佳实践.md'
+        - GUI镜像构建:
+            - '[Docker][Ubuntu]Libreoffice运行': './docker/gui/[Docker][Ubuntu]Libreoffice运行.md'
+            - '[Docker][Ubuntu]WPS运行': './docker/gui/[Docker][Ubuntu]WPS运行.md'
+            - '[Docker][Ubuntu]vscode运行': './docker/gui/[Docker][Ubuntu]vscode运行.md'
+            - '[Docker][Ubuntu 18.04]deepin-wine制作': './docker/gui/[Docker][Ubuntu 18.04]deepin-wine制作.md'
+            - '[Docker][deepin-wine]微信运行': './docker/gui/[Docker][deepin-wine]微信运行.md'
+            - '[Docker][deepin-wine]QQ运行': './docker/gui/[Docker][deepin-wine]QQ运行.md'
+            - '[Docker][deepin-wine]TIM运行': './docker/gui/[Docker][deepin-wine]TIM运行.md'
+            - '[Docker][deepin-wine]迅雷运行': './docker/gui/[Docker][deepin-wine]迅雷运行.md'
+            - '[Docker]GUI最佳实践': './docker/gui/[Docker]GUI最佳实践.md'
+        - 'Docker Compose':
+            - '[译]Docker Compose概述': './docker/docker-compose/[译]Docker Compose概述.md'
+            - 'Compose安装': './docker/docker-compose/Compose安装.md'
+        - '常见问题':
+            - 'service启动docker失效': './docker/faq/service启动docker失效.md'
+            - 'docker build运行apt-get update失败': './docker/faq/docker build运行apt-get update失败.md'
+            - '安装git出错': './docker/faq/安装git出错.md'
+            - '安装g++出错': './docker/faq/安装g++出错.md'

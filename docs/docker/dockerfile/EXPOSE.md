@@ -28,11 +28,9 @@ EXPOSE 80/udp
 1. 使用标识符`-P, --publish-all`来发布`EXPOSE`指定的端口，`docker`会随机映射主机端口到容器的侦听端口
 2. 使用标识符`-p, --publish`指定容器和主机的映射端口
 
-    ```
-    -p host-port:container-port/<protocol>
-    # 比如映射主机端口号80到容器8080端口，侦听TCP协议
-    -p 80:8080/tcp
-    ```
+        -p host-port:container-port/<protocol>
+        # 比如映射主机端口号80到容器8080端口，侦听TCP协议
+        -p 80:8080/tcp
 
 ## 示例
 

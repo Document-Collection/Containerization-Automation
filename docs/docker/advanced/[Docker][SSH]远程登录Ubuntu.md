@@ -88,15 +88,13 @@ root@1b44046832b4:~#
 ## 自定义
 
 1. 主机`IP 127.0.0.1`可以替换为`localhost`
-    
-    ```
-    $ ssh root@localhost -p 32769
-    ```
+
+        $ ssh root@localhost -p 32769
+        
 2. 可以在启动容器时指定主机端口号
 
-    ```
-    $ docker run -d -p 32212:22 --name test_sshd zjzstu/ubuntu:18.04-ssh
-    ```
+        $ docker run -d -p 32212:22 --name test_sshd zjzstu/ubuntu:18.04-ssh
+
     参数`-p`将容器端口`22`映射到主机端口`32212`
 
 ## 环境变量
@@ -107,19 +105,15 @@ root@1b44046832b4:~#
 
 1. 在`Dockerfile`中输入环境变量到`shell`初始文件，比如`/etc/profile`
 
-    ```
-    ...
-    # 无效
-    ENV NOTVISIBLE "in users profile"
-    # 有效
-    RUN echo "export VISIBLE=now" >> /etc/profile
+        ...
+        # 无效
+        ENV NOTVISIBLE "in users profile"
+        # 有效
+        RUN echo "export VISIBLE=now" >> /etc/profile
 
-    EXPOSE 22
-    CMD ["/usr/sbin/sshd", "-D"]
-    ```
+        EXPOSE 22
+        CMD ["/usr/sbin/sshd", "-D"]
 
 2. 启动容器时手动设置
 
-    ```
-    $ docker run -e ENV=value ...
-    ```
+        $ docker run -e ENV=value ...
