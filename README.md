@@ -6,11 +6,6 @@
 
 学习和使用容器和自动化工具
 
-1. `Docker`
-2. `Kubernetes`
-3. `Jenkins CI`
-4. `Travis CI`
-
 ## 内容列表
 
 - [背景](#背景)
@@ -29,24 +24,23 @@
 编译文档需要预先安装以下工具：
 
 ```
-$ pip install -U Sphinx
-$ sudo apt-get install make
+$ pip install mkdocs
 ```
 
 ## 用法
 
 有两种文档使用方式
 
-1. 在线浏览文档：[Containers and Automation](https://container-automation.readthedocs.io/zh_CN/latest/)
+1. 在线浏览文档：[Containers and Automation](https://containerization-automation.readthedocs.io/zh_CN/latest/?badge=latest)
 
-2. 本地生成文档，实现如下：
+2. 本地浏览文档，实现如下：
 
     ```
     $ git clone https://github.com/zjZSTU/Containerization-Automation.git
-    $ cd Containerization-Automation/docs
-    $ make html
+    $ cd Containerization-Automation
+    $ mkdocs serve
     ```
-    编译完成后进入`docs/build/html`目录，打开`index.html`文件
+   启动本地服务器后即可登录浏览器`localhost:8000`
 
 ## 主要维护人员
 
