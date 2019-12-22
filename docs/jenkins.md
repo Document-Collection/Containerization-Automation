@@ -19,6 +19,7 @@
 * [[Jenkins][Nginx]反向代理](https://www.zhujian.tech/posts/7c823af7.html)
 * [[Jenkins]手动设置私钥](https://zhujian.tech/posts/c343c930.html)
 * [[Jenkins]Pipeline工程配置NodeJS环境](https://www.zhujian.tech/posts/d521b4ea.html)
+* [在Docker中运行Jenkins](https://zhujian.tech/posts/202ee452.html)
 
 ## 常见问题
 
