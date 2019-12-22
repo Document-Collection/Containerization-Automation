@@ -4,7 +4,10 @@
 
 > 容器化与自动化
 
-学习和使用容器和自动化工具
+学习、使用容器以及自动化工具。当前有：
+
+1. [Jenkins](https://containerization-automation.readthedocs.io/zh_CN/latest/jenkins/)
+2. [Docker](https://containerization-automation.readthedocs.io/zh_CN/latest/docker/basic/[%E8%AF%91]docker%E6%A6%82%E8%BF%B0/)
 
 ## 内容列表
 
