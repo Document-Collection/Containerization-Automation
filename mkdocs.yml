@@ -82,6 +82,7 @@ nav:
             - '[Docker][deepin-wine]QQ运行': './docker/gui/[Docker][deepin-wine]QQ运行.md'
             - '[Docker][deepin-wine]TIM运行': './docker/gui/[Docker][deepin-wine]TIM运行.md'
             - '[Docker][deepin-wine]迅雷运行': './docker/gui/[Docker][deepin-wine]迅雷运行.md'
+            - '[Docker][Ubuntu]Edraw安装': './docker/gui/[Docker][Ubuntu]Edraw安装.md'
             - '[Docker]GUI最佳实践': './docker/gui/[Docker]GUI最佳实践.md'
         - 'Docker Compose':
             - '[译]Docker Compose概述': './docker/docker-compose/[译]Docker Compose概述.md'
