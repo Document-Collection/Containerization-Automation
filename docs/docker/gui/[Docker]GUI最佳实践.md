@@ -151,15 +151,15 @@ $ docker run --privileged ...
 * 时区
 * 中文输入法
 
-参考[[Linux][locale]字符集设置](https://zj-linux-guide.readthedocs.io/zh_CN/latest/configure/[Linux][locale]%E5%AD%97%E7%AC%A6%E9%9B%86%E8%AE%BE%E7%BD%AE.html)设置zh_CN.UTF-8
+参考[[locale]字符集设置](https://zj-linux-guide.readthedocs.io/zh_CN/latest/tool-install-configure/[LOCALE]%E5%AD%97%E7%AC%A6%E9%9B%86%E8%AE%BE%E7%BD%AE/)设置`zh_CN.UTF-8`
 
-出现中文乱码时，参考[[Ubuntu 18.04]中文乱码](https://zj-linux-guide.readthedocs.io/zh_CN/latest/configure/[Ubuntu%2018.04]%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81.html)安装中文字体;
+出现中文乱码时，参考[[Ubuntu]中文乱码](https://zj-linux-guide.readthedocs.io/zh_CN/latest/tool-install-configure/[Ubuntu]%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/)安装中文字体;
 
 ```
 sudo apt-get install ttf-wqy-microhei   #文泉驿-微米黑
 ```
 
-中国处于东八区，和默认时区相差`8`个小时，参考[[Ubuntu 18.04][localtime]设置时区](https://zj-linux-guide.readthedocs.io/zh_CN/latest/configure/[Ubuntu%2018.04][localtime]%E8%AE%BE%E7%BD%AE%E6%97%B6%E5%8C%BA.html)进行设置
+中国处于东八区，和默认时区相差`8`个小时，参考[[localtime]设置时区](https://zj-linux-guide.readthedocs.io/zh_CN/latest/tool-install-configure/[localtime]%E8%AE%BE%E7%BD%AE%E6%97%B6%E5%8C%BA/)进行设置
 
 关于中文输入法使用，在容器启动时设置环境变量即可
 

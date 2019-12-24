@@ -1,7 +1,7 @@
 
 # [Docker][deepin-wine]迅雷运行
 
-参考：[[Docker][deepin-wine]微信运行](https://container-automation.readthedocs.io/zh_CN/latest/docker/gui/[Docker][deepin-wine]微信运行.html)
+参考：[[Docker][deepin-wine]微信运行](./[Docker][deepin-wine]微信运行.md)
 
 迅雷安装包下载地址：[deepin.com.thunderspeed](https://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.thunderspeed/)
 
