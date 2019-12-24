@@ -49,6 +49,7 @@ nav:
             - '编写.dockerignore': './docker/advanced/编写.dockerignore.md'
             - '[docker search]搜索镜像': './docker/advanced/[docker search]搜索镜像.md'
             - '[Docker][SSH]远程登录Ubuntu': './docker/advanced/[Docker][SSH]远程登录Ubuntu.md'
+            - '[Ubuntu]nvidia-docker安装': './docker/advanced/[Ubuntu]nvidia-docker安装.md'
         - Dockerfile:
             - 'Dockerfile编写': './docker/dockerfile/Dockerfile编写.md'
             - 'FROM': './docker/dockerfile/FROM.md'
