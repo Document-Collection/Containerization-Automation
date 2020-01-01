@@ -87,6 +87,7 @@ nav:
         - 'Docker Compose':
             - '[译]Docker Compose概述': './docker/docker-compose/[译]Docker Compose概述.md'
             - 'Compose安装': './docker/docker-compose/Compose安装.md'
+            - 'Compose版本依赖': './docker/docker-compose/Compose版本依赖.md'
         - '常见问题':
             - 'service启动docker失效': './docker/faq/service启动docker失效.md'
             - 'docker build运行apt-get update失败': './docker/faq/docker build运行apt-get update失败.md'
