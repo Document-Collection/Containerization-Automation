@@ -90,3 +90,7 @@ services:
 volumes:
   data-volume:
 ```
+
+## 卷命名策略
+
+`docker-compose`新建卷时，会使用`{NAME}_{VOLUME_NAME}`的方式创建，比如卷命名为`ubuntu_home`，使用镜像为`zjzstu/ubuntu:latest`，那么如果卷不存在，新创建的卷命名为`ubuntu_ubuntu_home`
