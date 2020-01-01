@@ -214,8 +214,15 @@ restart: unless-stopped
 hostname: foo
 ```
 
-## 终端设置
+## 交互式Shell设置
+
+参考：
+
+[使用Docker Compose的交互式shell](https://www.itranslater.com/qa/details/2131115956192674816)
+
+[使用Docker Compose的交互式shell？](https://cloud.tencent.com/developer/ask/111359)
 
 ```
 tty: true
+stdin_open: true
 ```
