@@ -91,6 +91,7 @@ nav:
             - 'Compose文件格式概述': './docker/compose/Compose文件格式概述.md'
             - 'Compose文件格式 - Service设置': './docker/compose/Compose文件格式 - Service设置.md'
             - 'Compose文件格式 - 存储设置': './docker/compose/Compose文件格式 - 存储设置.md'
+            - '使用docker-compose还是docker run': './docker/compose/使用docker-compose还是docker run.md'
         - '常见问题':
             - 'service启动docker失效': './docker/faq/service启动docker失效.md'
             - 'docker build运行apt-get update失败': './docker/faq/docker build运行apt-get update失败.md'
