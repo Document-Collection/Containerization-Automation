@@ -1,0 +1,15 @@
+version: "3.7"
+services: 
+    jenkins:
+        container_name: jenkins
+        image: jenkins/jenkins
+        volumes: 
+            - "home:/var/jenkins_home"
+        ports: 
+            - "7070:8080"
+            - "50000:50000"
+        restart: always
+        tty: true
+        stdin_open: true
+volumes: 
+    home:

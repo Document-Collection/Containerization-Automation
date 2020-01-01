@@ -1,0 +1,15 @@
+version: "3.7"
+services: 
+    jenkins:
+        container_name: gitlab
+        image: gitlab/gitlab-ce:latest
+        volumes: 
+            - "/srv/gitlab/config:/etc/gitlab"
+            - "/srv/gitlab/logs:/var/log/gitlab"
+            - "/srv/gitlab/data:/var/opt/gitlab"
+        ports: 
+            - "7010:7010"
+            - "7020:22"
+        restart: always
+        tty: true
+        stdin_open: true
