@@ -1,0 +1,13 @@
+version: "3.7"
+services: 
+    ubuntu:
+        image: 'zjzstu/ubuntu:latest'
+        build: .
+        environment: 
+            - XMODIFIERS="@im=fcitx"
+            - QT_IM_MODULE="fcitx"
+            - GTK_IM_MODULE="fcitx"
+        container_name: ubuntu
+        tty: true
+        stdin_open: true
+        command: bash
