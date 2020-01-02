@@ -3,7 +3,7 @@
 
 原文地址：[Overview of Docker Compose](https://docs.docker.com/compose/)
 
-`Compose`是一个定义和运行多容器`Docker`应用程序的工具。对于`Compose`而言，通过`YAML`文件配置应用程序，然后使用一个命令即可根据配置文件创建并启动所有服务。更多有关`Compose`的特性可查看[the list of features](https://docs.docker.com/compose/#features)
+`Compose`是一个定义和运行多容器的`Docker`工具。对于`Compose`而言，通过`YAML`文件配置应用程序，然后使用一个命令即可根据配置文件创建并启动所有服务。更多有关`Compose`的特性可查看[the list of features](https://docs.docker.com/compose/#features)
 
 可以在所有环境中撰写`Compose`：生产（`producing`）、准备（`staging`）、开发（`testing`）、测试以及`CI`工作流。更多用例在[Common Use Case](https://docs.docker.com/compose/#common-use-cases)
 
