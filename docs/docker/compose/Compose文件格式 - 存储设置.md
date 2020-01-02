@@ -91,6 +91,22 @@ volumes:
   data-volume:
 ```
 
-## 卷命名策略
+### external
 
-`docker-compose`新建卷时，会使用`{NAME}_{VOLUME_NAME}`的方式创建，比如卷命名为`ubuntu_home`，使用镜像为`zjzstu/ubuntu:latest`，那么如果卷不存在，新创建的卷命名为`ubuntu_ubuntu_home`
+参考：[docker使用小记6 - docker-compose挂载数据卷出现的问题](https://www.cnblogs.com/qvennnnn/p/11732324.html)
+
+顶级键`volumes`包含多个属性，`external`属性默认设置为`false`，启动容器时会创建一个命名为`[projectname]_[volumename]`的卷；如果已存在待使用的卷，可以设置`external`属性为`true`，那么启动容器时会直接使用命名为`volumename`的卷。示例如下：
+
+```
+version: "3.7"
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - data:/var/lib/postgresql/data
+
+volumes:
+  data:
+    external: true
+```
