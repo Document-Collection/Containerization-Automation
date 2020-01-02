@@ -1,5 +1,18 @@
 version: "3.7"
 services: 
+    jenkins:
+        labels:
+            AUTHOR: "zhujian <zjzstu@github.com>"
+        container_name: jenkins
+        image: jenkins/jenkins
+        volumes: 
+            - "jenkins_home:/var/jenkins_home"
+        ports: 
+            - "7070:8080"
+            - "50000:50000"
+        restart: always
+        tty: true
+        stdin_open: true
     gitlab:
         labels:
             AUTHOR: "zhujian <zjzstu@github.com>"
@@ -15,3 +28,6 @@ services:
         restart: always
         tty: true
         stdin_open: true
+volumes: 
+    jenkins_home:
+        external: true

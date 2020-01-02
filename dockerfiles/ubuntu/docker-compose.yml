@@ -1,6 +1,8 @@
 version: "3.7"
 services: 
     ubuntu:
+        labels:
+            AUTHOR: "zhujian <zjzstu@github.com>"
         container_name: ubuntu
         image: 'zjzstu/ubuntu:latest'
         build: .
@@ -10,7 +12,3 @@ services:
             - GTK_IM_MODULE="fcitx"
         tty: true
         stdin_open: true
-        volumes: 
-            - "home:/var/uhome"
-volumes: 
-    home:
