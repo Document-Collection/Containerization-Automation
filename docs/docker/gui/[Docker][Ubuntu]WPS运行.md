@@ -7,7 +7,7 @@
 
 `Ubuntu`自带的`Libreoffice`操作体验不如`word`，打算安装`WPS For Linux`
 
-官网地址：[WPS](http://wps-community.org/downloads)
+官网地址：[WPS](https://linux.wps.cn/#)
 
 共`4`项功能：
 
