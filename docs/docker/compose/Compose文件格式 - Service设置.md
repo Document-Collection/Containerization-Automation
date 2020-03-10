@@ -214,6 +214,12 @@ restart: unless-stopped
 hostname: foo
 ```
 
+## 当前用户设置
+
+```
+user: root
+```
+
 ## 交互式Shell设置
 
 参考：
