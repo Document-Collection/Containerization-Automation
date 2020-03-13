@@ -44,6 +44,7 @@ nav:
             - 'Docker Hub使用': './docker/basic/docker-hub使用.md'
             - 'Docker启动设置': './docker/basic/Docker启动设置.md'
             - '[docker commit]保存容器为镜像': './docker/basic/[docker commit]保存容器为镜像.md'
+            - '[Docker]DNS设置': './docker/basic/[Docker]DNS设置.md'
         - 进阶:
             - '[译]Docker开发最佳实践':  './docker/advanced/[译]Docker开发最佳实践.md'
             - '编写.dockerignore': './docker/advanced/编写.dockerignore.md'
