@@ -9,4 +9,4 @@
 
 相关链接
 
-* [今天你docker了吗?](https://www.zhujian.tech/posts/5c6c610b.html)
+* [今天你docker了吗?](https://blog.zhujian.life/posts/5c6c610b.html)
