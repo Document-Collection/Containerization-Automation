@@ -14,6 +14,7 @@
 * [[Jenkins][GitLab][Hexo]新建Pipeline工程实现CI功能](https://blog.zhujian.life/posts/f80ec296.html)
 * [[Jenkins]手动设置私钥](https://blog.zhujian.life/posts/c343c930.html)
 * [[Jenkins]Pipeline工程配置NodeJS环境](https://blog.zhujian.life/posts/d521b4ea.html)
+* [[Jenkins]语法查询](https://blog.zhujian.life/posts/bf0708ea.html)
 * Proxy
     * [[Jenkins]Tomcat托管](https://blog.zhujian.life/posts/bc77c204.html)
     * [[Jenkins][Nginx]反向代理](https://blog.zhujian.life/posts/7c823af7.html)
@@ -32,3 +33,4 @@
 - [[Jenkins]Url is blocked: Requests to localhost are not allowed](https://blog.zhujian.life/posts/5d46d7f9.html)
 - [Hook executed successfully but returned HTTP 404](https://blog.zhujian.life/posts/6ff96ec3.html)
 - [Hook executed successfully but returned HTTP 403](https://blog.zhujian.life/posts/6ff96ec3.html)
+- [[jenkinsci/blueocean][NodeJS]bash: node: command not found](https://blog.zhujian.life/posts/5d3090aa.html)
