@@ -52,6 +52,7 @@ nav:
             - '[Docker][SSH]远程登录Ubuntu': './docker/advanced/[Docker][SSH]远程登录Ubuntu.md'
             - '[Ubuntu]nvidia-docker安装': './docker/advanced/[Ubuntu]nvidia-docker安装.md'
             - '[alpine]源配置': './docker/advanced/[alpine]源配置.md'
+            - '镜像迁移': './docker/advanced/镜像迁移.md'
         - Dockerfile:
             - 'Dockerfile编写': './docker/dockerfile/Dockerfile编写.md'
             - 'FROM': './docker/dockerfile/FROM.md'
