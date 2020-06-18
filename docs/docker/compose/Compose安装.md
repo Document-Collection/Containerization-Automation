@@ -15,6 +15,8 @@
 $ sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 ```
 
+**从官网上找到上面这一步，获取最新的版本**
+
 授予可执行权限
 
 ```
